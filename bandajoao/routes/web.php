@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function () {
+    return view('layout');
+});
+
+Route::get('/bandas', function () {
+    return view('bandas');
+});
+
+Route::get('/albuns', function () {
+    return view('bandas');
+});
+
+
+//Route::get('/bandas', 'BandaController@index')->name('bandas.index');
+//Route::get('/albuns', 'AlbumController@index')->name('albuns.index');

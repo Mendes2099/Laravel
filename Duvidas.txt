@@ -1,0 +1,22 @@
+Configuração: 
+
+Crie uma novo projecto.
+-Configurei o banco de dados no arquivo .env.
+-Executei as migrações para criar as tabelas necessárias.  (Bem criadas?)
+
+Layout:
+
+-Criei um layout master.  // A elaborar
+-Defini blades para exibir o conteúdo variável em cada página.
+
+Rotas: 
+
+- Tenho ainda que defenir as rotas necessárias para aceder ás diferentes páginas e ações do sistema.
+-Mapar as rotas para as funções do controlador apropriado.
+
+
+
+
+
+Notas & etc.. 
+- É necessário comentar o código?
