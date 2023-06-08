@@ -2,5 +2,10 @@
 
 @section('content')
     <h1>Bandas</h1>
-    <!-- Conteúdo específico da página de bandas -->
+    <ul>
+        @foreach($bandas as $banda)
+            <li>{{ $banda->nome }}</li>
+        @endforeach
+    </ul>
 @endsection
+

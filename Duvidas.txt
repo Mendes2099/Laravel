@@ -7,12 +7,12 @@ Crie uma novo projecto.
 Layout:
 
 -Criei um layout master.  // A elaborar
--Defini blades para exibir o conteúdo variável em cada página.
+-Defini blades para exibir o conteúdo variável em cada página. // A elaborar
 
 Rotas: 
 
-- Tenho ainda que defenir as rotas necessárias para aceder ás diferentes páginas e ações do sistema.
--Mapar as rotas para as funções do controlador apropriado.
+-Tenho ainda que defenir as rotas necessárias para aceder ás diferentes páginas e ações do sistema. (Bem criadas?)
+-Mapei as rotas para as funções do controlador apropriado. (Bem criadas?)
 
 
 

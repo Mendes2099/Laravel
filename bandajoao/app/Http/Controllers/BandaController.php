@@ -14,7 +14,7 @@ class BandaController extends Controller
     {
         $bandas = Banda::all();
 
-        return view('bandas.index', compact('bandas'));
+        return view('bandas.index', compact('bandas')); // Obtém todas as bandas do banco de dados
     }
 
     /**

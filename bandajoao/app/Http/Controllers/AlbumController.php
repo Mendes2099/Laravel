@@ -14,7 +14,7 @@ class AlbumController extends Controller
     {
         $albuns = Album::all();
 
-        return view('albuns.index', compact('albuns'));
+        return view('albuns.index', compact('albuns')); // Obtém todos os álbuns da banda
     }
 
     /**
