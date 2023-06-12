@@ -2,10 +2,12 @@
 
 @section('content')
     <h1>Bandas</h1>
+
+    <button>Inserir banda</button>
     <ul>
-        @foreach($bandas as $banda)
+       {{-- @foreach($bandas as $banda)
             <li>{{ $banda->nome }}</li>
-        @endforeach
+        @endforeach--}}
     </ul>
 @endsection
 
