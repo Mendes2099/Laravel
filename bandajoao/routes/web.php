@@ -16,11 +16,12 @@ use App\Http\Controllers\UserController;
 |
 */
 
-
 // Função da landing page
-Route::get('/home', function () {
-    return view('home');
+Route::get('/', function () {
+    return view('general.home');
 });
+
+//!---------------------------------------------------------------------------------------------
 
 // Rotas para visualizar bandas
 Route::get('/bandas/{banda}', [BandaController::class, 'show'])->name('bandas.show');
