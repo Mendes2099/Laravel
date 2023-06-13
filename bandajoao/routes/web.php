@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BandaController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,22 +18,10 @@ use App\Http\Controllers\AlbumController;
 
 
 // Função da landing page
-
-Route::get(
-    '/home',
-    [UserController::class, 'index']
-)->name('home');
-
-// Rota fallback
-Route::fallback(function () {
-    return view('fallback');
+Route::get('/home', function () {
+    return view('home');
 });
 
-Route::get('/home_add_user',   [UserController::class, 'addUser'])->name('add_user');
-Route::post('/create_user',   [UserController::class, 'createUser'])->name('create_user');
-
-//! -----------------------------------------------------------------------------------------------
-/*
 // Rotas para visualizar bandas
 Route::get('/bandas/{banda}', [BandaController::class, 'show'])->name('bandas.show');
 Route::get('/bandas', [BandaController::class, 'index'])->name('bandas.index');
@@ -62,4 +51,4 @@ Route::put('/bandas/{banda}/albuns/{album}', [AlbumController::class, 'update'])
 
 // Rota para excluir álbuns (apenas para administradores)
 Route::delete('/bandas/{banda}/albuns/{album}', [AlbumController::class, 'destroy'])->name('albuns.destroy')->middleware('admin');
-*/
+
