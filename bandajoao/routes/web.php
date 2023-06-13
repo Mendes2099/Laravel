@@ -16,10 +16,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
-// Função da landing page
-Route::get('/', function () {
-    return view('general.home');
-});
+Route::get('/', [UserController::class, 'index'])->name('home');
+
 
 //!---------------------------------------------------------------------------------------------
 
