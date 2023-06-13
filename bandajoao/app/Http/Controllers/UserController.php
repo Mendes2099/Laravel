@@ -8,5 +8,4 @@ class UserController extends Controller
     {
         return view('general.home');
     }
-
 }

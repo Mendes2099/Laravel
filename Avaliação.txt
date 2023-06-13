@@ -1,3 +1,26 @@
 https://docs.google.com/document/d/1ubwH587N3f0a2Y54KM4hJrekMbJ6PS3UkWcrtLGn0x8/edit
 
+Prompt:
+
+Objectivo: Criar um CRM de visualização e edição de bandas de música.
+
+Requisitos: O sistema deve conter uma tabela principal onde aparecem todas as bandas. Nesta tabela constará o nome da banda, uma foto da mesma e o número de álbuns criados. Na tabela principal deve haver um botão para ver os álbuns de cada banda. Ao clicar aqui abrirá uma nova tabela com os álbuns daquela banda, com os campos: nome do álbum, imagem, data de lançamento.
+
+Deverá ser criado um sistema simples de registo e login de Users usando o fortify e uma página de Dashboard no menu acedida apenas por utilizadores autenticados (protegida por Middleware) que diga: ‘Olá, nome do utilizador’.
+
+Deve haver pelo menos dois tipos de peril. Um admin. Que pode inserir, apagar e editar bandas e álbuns. E Users autenticados, que apenas conseguem editar bandas e álbuns. 
+
+Users não autenticados apenas podem visualizar conteúdos.
+
+ Avaliação :
+Gerar uma nova aplicação e configurar correctamente a Base de Dados: 1.5V.
+Criar um layout master e estender correctamente: 1.5V.
+Usar correctamente o sistema de rotas com ligação às funções do controller: 1.5V.
+Fazer uso das migrações para criar tabelas e estrutura: 1.5V.
+Criar correctamente um CRUD: 6V (1.5 para cada).
+Criar um sistema de Login: 2V •Utilizar uma Middleware: 1.5V.
+Utilizar bloqueio por tipo de utilizador em certos componentes da Blade:1.5v.
+Guardar e visualizar um ficheiro: 2V.
+Acrescentar uma funcionalidade / helper.
+
 
