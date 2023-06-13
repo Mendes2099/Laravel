@@ -1,24 +1,29 @@
 https://docs.google.com/document/d/1ubwH587N3f0a2Y54KM4hJrekMbJ6PS3UkWcrtLGn0x8/edit
 
-Em Laravel o objectivo é criar um CRM de visualização e edição de bandas de música.
+Elabora um plano para a criação de um projeto em Laravel. O objectivo é criar um CRM de visualização e edição de bandas de música.
 
-Requisitos: O sistema deve conter uma tabela principal onde aparecem todas as bandas. Nesta tabela constará o nome da banda, uma foto da mesma e o número de álbuns criados. Na tabela principal deve haver um botão para ver os álbuns de cada banda. Ao clicar aqui abrirá uma nova tabela com os álbuns daquela banda, com os campos: nome do álbum, imagem, data de lançamento.
+Requisitos: 
 
-Deverá ser criado um sistema simples de registo e login de Users usando o fortify e uma página de Dashboard no menu acedida apenas por utilizadores autenticados (protegida por Middleware) que diga: ‘Olá, nome do utilizador’.
+- O sistema deve conter uma tabela principal onde aparecem todas as bandas. Nesta tabela constará o nome da banda, uma foto da mesma e o número de álbuns criados. Na tabela principal deve haver um botão para ver os álbuns de cada banda e ao clicar nele abrirá uma nova tabela com os álbuns daquela banda, com os campos: (nome do álbum, imagem, data de lançamento.)
 
-Deve haver pelo menos dois tipos de peril. Um admin. Que pode inserir, apagar e editar bandas e álbuns. E Users autenticados, que apenas conseguem editar bandas e álbuns. 
+-Deverá ser criado um sistema simples de registo e login de Users usando o fortify e uma página de Dashboard (protegida por Middleware) no menu acedida apenas por users autenticados que diga: ‘Olá, nome do utilizador’.
 
-Users não autenticados apenas podem visualizar conteúdos.
+-Deve haver pelo menos dois tipos de peril. Um admin. Que pode inserir, apagar e editar bandas e álbuns. E Users autenticados, que apenas conseguem editar bandas e álbuns. Users não autenticados apenas podem visualizar conteúdos.
 
-Avaliação :
-Gerar uma nova aplicação e configurar corretamente a Base de Dados usando o query builder: 1.5V.
-Criar um layout master e estender correctamente: 1.5V.
-Usar correctamente o sistema de rotas com ligação às funções do controller: 1.5V.
-Fazer uso das migrações para criar tabelas e estrutura: 1.5V.
-Criar correctamente um CRUD: 6V (1.5 para cada).
-Criar um sistema de Login: 2V •Utilizar uma Middleware: 1.5V.
-Utilizar bloqueio por tipo de utilizador em certos componentes da Blade:1.5v.
-Guardar e visualizar um ficheiro: 2V.
-Acrescentar uma funcionalidade / helper.
+O sistema será avaliado com base no seguinte:
+-Gera uma nova aplicação e configura corretamente a Base de Dados: 1.5V.
+-Cria um layout master e estende correctamente: 1.5V.
+-Usa correctamente o sistema de rotas com ligação às funções do controller: 1.5V.
+-Faz uso das migrações para criar tabelas e estrutura: 1.5V.
+-Cria correctamente um CRUD: 6V (1.5 para cada).
+-Cria um sistema de Login: 2V .
+-Utilizar uma Middleware: 1.5V.
+-Utiliza bloqueio por tipo de utilizador em certos componentes da Blade: 1.5v.
+-Guardaa e visualiza um ficheiro: 2V.
+-Acrescenta uma funcionalidade / helper.
+
+Notas: 
+- Deve ser usado o query builder para inserção de dados na base de dados e o fortify para o registo e login de users.
+- Devem ser criadas tabelas para os users, albuns e bandas.
 
 
