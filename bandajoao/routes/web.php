@@ -17,10 +17,9 @@ use App\Http\Controllers\AlbumController;
 
 
 // Função da landing page
-Route::get(
-    '/',
-    [UserController::class, 'index']
-)->name('home');
+Route::get('/', function () {
+    return view('home');
+});
 
 // Rota fallback
 Route::fallback(function () {
