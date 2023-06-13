@@ -44,10 +44,10 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Bandas</a></li>
-                <li><a href="#">Álbuns</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="#">Início</a></li> "
+                <li><a href="{{ route('bandas') }}">Bandas</a></li>
+                <li><a href="{{ route('albuns') }}">Álbuns</a></li>
+                <li><a href="{{ route('auth.login') }}">Login</a></li>
             </ul>
         </nav>
     </header>
