@@ -17,7 +17,7 @@ class UserController extends Controller
     /**
      * Exibe uma lista de usuários.
      */
-    public function index()
+    public function example()
     {
         $users = User::all();
 
