@@ -15,15 +15,22 @@ use App\Http\Controllers\AlbumController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 
 // Função da landing page
-Route::get('/home', function () {
-    return view('layout');
+Route::get(
+    '/',
+    [UserController::class, 'index']
+)->name('home');
+
+// Rota fallback
+Route::fallback(function () {
+    return view('fallback');
 });
+
+Route::get('/home_add_user',   [UserController::class, 'addUser'])->name('add_user');
+Route::post('/create_user',   [UserController::class, 'createUser'])->name('create_user');
+
+//! -----------------------------------------------------------------------------------------------
 
 
 // Rotas para visualizar bandas
