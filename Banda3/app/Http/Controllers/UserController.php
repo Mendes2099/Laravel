@@ -18,14 +18,16 @@ class UserController extends Controller
         return view('general.fallback');
      }
 
+     //!------------------------------------
+
      public function addUser()
      {
          return view('auth.register');
      }
 
+
      public function createUser(Request $request)
      {
-
 
          $myUser = $request->all();
 
@@ -43,6 +45,6 @@ class UserController extends Controller
              'password' => Hash::make($request->password)
          ]);
 
-         return redirect('home_all_users')->with('message', 'Utilizador adicioonado com sucesso');
+         return redirect('home_all_users')->with('message', 'Utilizador adicionado com sucesso');
      }
 }

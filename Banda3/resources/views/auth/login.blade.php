@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-    <title> Login</title>
+    <title>Login</title>
 @endsection
 
 
