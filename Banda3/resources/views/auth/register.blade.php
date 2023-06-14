@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="container">
-          <h1>Adicionar User</h1>
+          <h1>Registar</h1>
         <form method="POST" action="{{ route('create_user') }}">
             @csrf
             <div class="mb-3">

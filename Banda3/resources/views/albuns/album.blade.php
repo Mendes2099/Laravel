@@ -4,7 +4,11 @@
     <h1>Albuns</h1>
     <br>
     <div>
-        <h4>Todas os Albuns 💽</h4>
+        <h4>Todos os Albuns da banda (Placeholder) 💽</h4>
+
+        <p>A partir da tabela principal deve haver um botão que redirecione para esta blade para ver os álbuns da banda clicada. Ao clicar aqui abrirá uma nova tabela com os álbuns da banda, com os campos: (nome do álbum, imagem, data de lançamento.)</p>
+
+
         {{-- @foreach ($bandas as $banda)
             <div>
                 <h5>{{ $banda->nome }}</h5>
