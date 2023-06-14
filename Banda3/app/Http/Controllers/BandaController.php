@@ -9,4 +9,5 @@ class BandaController extends Controller
     public function banda(){
         return view('bandas.banda');
      }
+
 }

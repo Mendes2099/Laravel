@@ -49,7 +49,7 @@
                 <li><a href="/banda">Bandas</a></li>
                 <li><a href="/album">Álbuns</a></li>
                 <li><a href="/register">Registar</a></li>
-                <li><a href="/login">Login</a></li>
+                <li><a href="/login">Login</a></li> 
 
             </ul>
         </nav>

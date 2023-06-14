@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
+
 class UserController extends Controller
 {
     public function user(){
@@ -39,12 +40,12 @@ class UserController extends Controller
              ]
          );
 
-         DB::insert([
-             'email' => $request->email,
-             'name' =>  $request->name,
-             'password' => Hash::make($request->password)
-         ]);
+         DB::table('users')->insert([
+            'email' => $request->email,
+            'name' =>  $request->name,
+            'password' => Hash::make($request->password)
+        ]);
 
-         return redirect('home_all_users')->with('message', 'Utilizador adicionado com sucesso');
+         return redirect('home')->with('message', 'User adicionado com sucesso!!!');
      }
 }
