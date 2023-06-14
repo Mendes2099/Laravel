@@ -20,9 +20,14 @@ Route::get('/', function () {
     return view('general.welcome');
 });
 
+// Rota de teste
+Route::get('/test', function () {
+    return view('general.testhome');
+});
+
 //!--------------------------------------------------------------------------------------------------------------
 
-// Rotas para usuários
+// Rotas para users
 Route::middleware(['auth'])->group(function () {
     Route::get('/users', [UserController::class, 'index']);
     Route::get('/users/create', [UserController::class, 'create']);
