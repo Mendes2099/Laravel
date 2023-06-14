@@ -10,4 +10,9 @@ class BandaController extends Controller
         return view('bandas.banda');
      }
 
+     public function adicionarBanda()
+{
+    return view('bandas.adicionarBanda');
+}
+
 }

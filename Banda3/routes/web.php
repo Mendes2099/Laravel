@@ -40,3 +40,5 @@ Route::get('/home_add_user',   [UserController::class, 'addUser'])->name('add_us
 //! Permite adicionar bandas!
 Route::get('/adicionar-banda', [BandaController::class, 'adicionarBanda'])->name('adicionar-banda');
 
+
+

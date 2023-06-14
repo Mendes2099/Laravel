@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-    <h1>Adicionar User</h1>
 
     <div class="container">
+          <h1>Adicionar User</h1>
         <form method="POST" action="{{ route('create_user') }}">
             @csrf
             <div class="mb-3">
