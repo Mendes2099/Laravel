@@ -18,14 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 
 // Rota para a página inicial (welcome)
-Route::get('/', function () {
-    return view('general.home');
-});
+Route::get('/', [UserController::class, 'user'])->name('user');
 
 // Rota fallback
-Route::fallback(function () {
-    return view('general.fallback');
-});
+Route::fallback([UserController::class, 'fallback'])->name('fallback');
+
+//*------------------------------------------------------------------*/
 
 // Rota para a página do usuário (home)
 Route::get('/home', [UserController::class, 'user'])->name('user');
@@ -34,6 +32,8 @@ Route::get('/album', [AlbumController::class, 'album'])->name('album');
 // Rota para a página de banda (banda)
 Route::get('/banda', [BandaController::class, 'banda'])->name('banda');
 
+Route::post('/create_user',   [UserController::class, 'createUser'])->name('create_user');
+Route::get('/home_add_user',   [UserController::class, 'addUser'])->name('add_user');
 
 
 
