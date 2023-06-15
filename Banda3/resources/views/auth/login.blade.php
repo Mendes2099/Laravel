@@ -4,9 +4,13 @@
     <title>Login</title>
 @endsection
 
-
 @section('content')
     <div class="container">
+
+        @if (session('message'))
+                <div class="alert alert-success">{{ session('message') }}</div>
+            @endif
+
         <h1>Login</h1>
         <form method="POST" action="{{ route('loginUser') }}">
             @csrf
@@ -16,6 +20,8 @@
                 <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
+
+
             @error('email')
                 pass
             @enderror

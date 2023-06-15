@@ -6,9 +6,11 @@
     <form action="{{ route('post-adicionar-banda') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
+
             @if (session('message'))
                 <div class="alert alert-success">{{ session('message') }}</div>
             @endif
+            
             <label for="nome">Banda</label>
             <input type="text" name="nome" id="nome" class="form-control">
             @error('nome')
