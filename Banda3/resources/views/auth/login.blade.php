@@ -8,7 +8,7 @@
 @section('content')
     <div class="container">
         <h1>Login</h1>
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('loginUser') }}">
             @csrf
 
             <div class="mb-3">

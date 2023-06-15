@@ -24,6 +24,12 @@ class UserController extends Controller
          return view('auth.register');
      }
 
+     public function loginUser()
+     {
+         return view('auth.login');
+     }
+
+     //!------------------------------------
 
      public function createUser(Request $request)
      {
@@ -44,6 +50,6 @@ class UserController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-         return redirect('home')->with('message', 'User adicionado com sucesso!!!');
+         return redirect('/registar')->with('message', 'User adicionado com sucesso!!!');
      }
 }

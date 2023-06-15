@@ -45,11 +45,12 @@
     <header>
         <nav>
             <ul>
+
                 <li><a href="/home">Home</a></li>
                 <li><a href="/banda">Bandas</a></li>
                 <li><a href="/album">Álbuns</a></li>
-                <li><a href="/register">Registar</a></li>
-                <li><a href="/login">Login</a></li> 
+                <li><a href="/registar">Registar</a></li>
+                <li><a href="/login">Login</a></li>
 
             </ul>
         </nav>
