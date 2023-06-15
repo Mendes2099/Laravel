@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BandaController::class, 'index'])->name('bandas');
 // Rota para a página do usuário (home)
 Route::get('/home', [BandaController::class, 'index'])->name('bandas');
-
 //Rota para a blade fallback
 Route::fallback([UserController::class, 'fallback'])->name('fallback');
 
@@ -33,11 +32,11 @@ Route::get('/album', [AlbumController::class, 'album'])->name('album');
 Route::post('/create_user',   [UserController::class, 'createUser'])->name('create_user');
 Route::get('/home_add_user',   [UserController::class, 'addUser'])->name('add_user');
 
+// Banda
+Route::post('/banda', [BandaController::class, 'postAdicionarBanda'])->name('post-adicionar-banda');
+Route::get('/banda', [BandaController::class, 'adicionarBanda'])->name('adicionar-banda');
 //!------------------------------Erros------------------------------------*/
 
-// Banda
-Route::get('/banda', [BandaController::class, 'adicionarBanda'])->name('adicionar-banda');
-Route::post('/banda', [BandaController::class, 'postAdicionarBanda'])->name('post-adicionar-banda');
 
-
-
+//Rota que aceita um parâmetro id na URL e direciona a solicitação para o método index do controlador AlbumController.
+Route::get('/bandas/{id}/albums', [AlbumController::class, 'index'])->name('albuns.album');
