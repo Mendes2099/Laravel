@@ -7,13 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Banda;
 
 
 class UserController extends Controller
 {
-    public function user(){
-        return view('general.home');
-     }
 
      public function fallback(){
         return view('general.fallback');
