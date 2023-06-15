@@ -38,7 +38,7 @@ Route::get('/banda', [BandaController::class, 'adicionarBanda'])->name('adiciona
 //! Rotas relacionadas com users
 Route::post('/create_user',   [UserController::class, 'createUser'])->name('create_user');
 Route::get('/registar',   [UserController::class, 'addUser'])->name('add_user');
-Route::get('/login',   [UserController::class, 'loginUser'])->name('loginUser');
+
 
 // Rotas relacionadas com Albuns
 Route::post('/album', [AlbumController::class, 'postAdicionarAlbum'])->name('post-adicionar-Album');

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('user_type')->default('regular');
         });
     }
 
@@ -27,6 +28,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('user_type');
+        });
+
         Schema::dropIfExists('users');
     }
 };

@@ -12,7 +12,7 @@
         <div class="alert alert-success">{{ session('message') }}</div>
     @endif
 
-          <h1>Registar</h1>
+          <h1>Registar novo User</h1>
         <form method="POST" action="{{ route('create_user') }}">
             @csrf
             <div class="mb-3">
