@@ -15,7 +15,7 @@
                 <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                 @error('email')
-                    <div id="emailHelp" class="form-text">Insira um email registado.</div>
+                    <div id="emailHelp" class="form-text">Erro insira um email.</div>
                 @enderror
             </div>
 
@@ -24,7 +24,7 @@
                 <input name="password" type="password" class="form-control" id="exampleInputPassword1">
 
                 @error('password')
-                    <div id="passwordHelp" class="form-text">Insira uma password registada.</div>
+                    <div id="passwordHelp" class="form-text">Erro insira uma password.</div>
                 @enderror
             </div>
 
