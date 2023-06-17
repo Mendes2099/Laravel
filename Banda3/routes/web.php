@@ -45,3 +45,4 @@ Route::post('/album', [AlbumController::class, 'postAdicionarAlbum'])->name('pos
 Route::get('/album', [AlbumController::class, 'adicionarAlbum'])->name('adicionar-Album');
 
 //! (A defenir) Rota para a blade que mostra os albuns de uma banda (Acedida por botão na /home "Ver Álbuns")
+Route::get('/editarAlbum', [AlbumController::class, 'editarAlbum'])->name('editar-album');

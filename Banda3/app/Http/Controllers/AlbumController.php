@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Album;
 use Illuminate\Http\Request;
+use App\Models\Banda;
+
 
 class AlbumController extends Controller
 {
@@ -14,8 +16,25 @@ class AlbumController extends Controller
 
     public function index()
     {
-        $albuns = Album::all(); // Retrieve all Albuns from the database
-        return view('albuns.album', compact('albuns')); // Pass the $albuns variable to the view
+        $albuns = Album::all(); // Pega em todos os albuns da Base de dados
+        return view('albuns.album', compact('albuns')); // Passa a var $albuns para a view
+    }
+
+    public function editarAlbum()
+    {
+        // Add your logic here to retrieve and process data for the view
+        $albuns = Album::all(); // Retrieve all albums from the database
+
+        return view('albuns.editarAlbum', compact('albuns'));
+    }
+
+    //!------------------------A partir deste ponto são funções não verificadas--------------
+
+    public function indexAdicionarAlbum($bandaId)
+    {
+    $banda = Banda::find($bandaId);
+
+    return view('albuns.adicionarAlbum', compact('banda'));
     }
 
     public function adicionarAlbumView()

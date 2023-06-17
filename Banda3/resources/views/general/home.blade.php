@@ -7,16 +7,16 @@
         <h4>Todas as bandas 🎸</h4>
 
         <p>Link do chat: https://chat.openai.com/share/e461ba65-cd6b-473b-8625-45f50ec6b6b4</p>
-        <p style="font-weight: bold; color: red;"> Botão "Ver Álbuns" redireciona corretamente mas falta configurar os albuns</p>
+        <p style="font-weight: bold; color: red;"> Botões redirecionam corretamente. "Inserir" e "Editar" devem ser restritos </p>
 
-        <p>Aqui temos uma tabela com o nome de uma banda, uma foto da mesma e o número de álbuns criados.</p>
+        <p>Aqui temos uma tabela com o nome de uma banda, uma foto da mesma e o número de álbuns criados. + Ações conforme o user</p>
         <table class="table">
             <thead>
                 <tr>
                     <th>Nome da Banda</th>
                     <th>Foto</th>
                     <th>Número de Álbuns</th>
-                    <th>Ver albuns</th>
+                    <th>Álbuns</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,8 +27,12 @@
                                 width="100px"></td>
                         <td>{{ $banda->numero_albuns }}</td>
                         <td>
-                            <a href="{{ route('albuns.album', ['id' => $banda->id]) }}" class="btn btn-primary">Ver Álbuns</a> {{-- A blade ver albuns terá que estar completa primeiro --}}
-
+                            <a href="{{ route('albuns.album', ['id' => $banda->id]) }}"
+                                class="btn btn-primary">Ver</a>
+                            <a href="{{ route('post-adicionar-Album', ['id' => $banda->id]) }}"
+                                class="btn btn-success">Inserir</a>
+                            <a href="{{ route('editar-album', ['id' => $banda->id]) }}"
+                                class="btn btn-info">Editar</a>
                         </td>
                     </tr>
                 @endforeach
@@ -36,3 +40,4 @@
         </table>
     </div>
 @endsection
+
