@@ -3,6 +3,8 @@
 @section('content')
     <h1>Adicionar nova Banda</h1>
 
+    <p>Aqui pode adicionar novas bandas que serão mostradas na blade /home.</p>
+
     <form action="{{ route('post-adicionar-banda') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
@@ -10,8 +12,8 @@
             @if (session('message'))
                 <div class="alert alert-success">{{ session('message') }}</div>
             @endif
-            
-            <label for="nome">Banda</label>
+
+            <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome" class="form-control">
             @error('nome')
                 <div class="error">{{ $message }}</div>

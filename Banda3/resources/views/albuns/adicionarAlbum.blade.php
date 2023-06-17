@@ -1,15 +1,23 @@
 @extends('layouts.layout')
 
 @section('content')
-    <h1>Adicionar nova Banda</h1>
+    <h1>Adicionar novo Album 💽</h1>
 
-    <form action="{{ route('post-adicionar-banda') }}" method="POST" enctype="multipart/form-data">
+    <br>
+
+    <h2 style="font-weight: bold; color: red;"> BLADE INCOMPLETA! necessário configurar: ( Rotas do Album / AlbumController / Album Model)</h2>
+
+    <p>Aqui pode adicionar novos albuns que serão mostrados na blade /album (Que neste momento é esta página mas tem que ser
+        adicionada uma outra para mostrar os albuns).</p>
+
+    <form action="{{ route('post-adicionar-Album') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             @if (session('message'))
                 <div class="alert alert-success">{{ session('message') }}</div>
             @endif
-            <label for="nome">Banda</label>
+
+            <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome" class="form-control">
             @error('nome')
                 <div class="error">{{ $message }}</div>
@@ -17,9 +25,9 @@
         </div>
 
         <div class="form-group">
-            <label for="numero_albuns">Número de Álbuns</label>
-            <input type="number" name="numero_albuns" id="numero_albuns" class="form-control">
-            @error('numero_albuns')
+            <label for="data_lancamento">Data de Lançamento</label>
+            <input type="date" name="data_lancamento" id="data_lancamento" class="form-control">
+            @error('data_lancamento')
                 <div class="error">{{ $message }}</div>
             @enderror
         </div>
@@ -31,10 +39,8 @@
                 <div class="error">{{ $message }}</div>
             @enderror
         </div>
-<br>
-        <button type="submit" class="btn btn-primary">Adicionar 😎</button>
+        <br>
+        <button type="submit" class="btn btn-primary">Adicionar 💽</button>
         <br>
     </form>
 @endsection
-
-

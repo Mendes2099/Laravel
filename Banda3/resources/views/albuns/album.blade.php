@@ -20,8 +20,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- Aqui você pode iterar sobre os álbuns da banda --}}
-                    {{-- Substitua $banda->albuns pela variável que contém os álbuns da banda --}}
                     @foreach ($albuns as $album)
                         <tr>
                             <td>{{ $album->nome }}</td>

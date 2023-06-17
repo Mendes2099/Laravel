@@ -15,6 +15,8 @@ class BandaController extends Controller
         return view('general.home', compact('bandas')); // Pass the $bandas variable to the view
     }
 
+    //*---------------------------------------
+
     // Método responsável por exibir o formulário de adicionar banda
     public function adicionarBanda()
     {
