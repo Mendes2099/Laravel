@@ -7,35 +7,50 @@ use Illuminate\Http\Request;
 
 class AlbumController extends Controller
 {
-    public function album(){
+    public function album()
+    {
         return view('albuns.album');
-     }
+    }
 
-     public function index()
-     {
-         $albuns = Album::all(); // Retrieve all Albuns from the database
-         return view('general.album', compact('Albuns')); // Pass the $bandas variable to the view
-     }
+    public function index()
+    {
+        $albuns = Album::all(); // Retrieve all Albuns from the database
+        return view('albuns.album', compact('albuns')); // Pass the $albuns variable to the view
+    }
 
-
-    //! Terá que ser adicionada uma blade para ver os albuns já que para editar já existe
-
-    // As funções de adicionar albuns devem ser semelhantes ás do controller BandaController mas com atributos diferentes
-    // (Migration dos albuns) -> database\migrations\2023_06_13_224007_create_albuns_table.php
-
-    // Método responsável por exibir a view dos Album
     public function adicionarAlbumView()
     {
         return view('albuns.album');
     }
 
-    // Método responsável por exibir o formulário de adicionar Album
     public function adicionarAlbum()
     {
         return view('albuns.adicionarAlbum');
     }
 
-    // Método responsável por processar o formulário de adicionar banda
+    public function postAdicionarAlbum(Request $request)
+    {
+        $request->validate([
+            'nome' => 'required',
+            'data_lancamento' => 'required|date',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
+        // Handle the file upload
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/albums', $filename);
+        }
 
+        // Create a new Album instance
+        $album = new Album();
+        $album->nome = $request->nome;
+        $album->data_lancamento = $request->data_lancamento;
+        $album->imagem = $filename;
+        $album->save();
+
+        return redirect('/albums')->with('message', 'Album adicionado com sucesso!');
+    }
 }
+
