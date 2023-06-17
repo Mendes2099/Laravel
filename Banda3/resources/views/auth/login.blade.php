@@ -11,11 +11,11 @@
             @csrf
 
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <label for="exampleInputEmail1" class="form-label">Email</label>
                 <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                 @error('email')
-                    <div id="emailHelp" class="form-text">Insira um email válido.</div>
+                    <div id="emailHelp" class="form-text">Insira um email registado.</div>
                 @enderror
             </div>
 
@@ -24,11 +24,11 @@
                 <input name="password" type="password" class="form-control" id="exampleInputPassword1">
 
                 @error('password')
-                    <div id="passwordHelp" class="form-text">Insira uma password.</div>
+                    <div id="passwordHelp" class="form-text">Insira uma password registada.</div>
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">Entrar</button>
+            <button type="submit" class="btn btn-primary">Login</button>
         </form>
     </div>
 @endsection
