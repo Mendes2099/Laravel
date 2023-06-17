@@ -1,15 +1,14 @@
 @extends('layouts.layout')
 
 @section('content')
-    <h1> Ver Albuns</h1>
+    <h1> Ver Albuns de (placeholder)</h1>
     <br>
     <div>
         <h4>Todos os Albuns da banda 💽</h4>
 
-        <p style="font-weight: bold; color: red;"> Blade parece funcionar corretamente corretamente. Quando conseguir configurar o envio para a BD verificar</p>
+        <p style="font-weight: bold; color: red;"> Blade parece funcionar corretamente corretamente (Testei inserindo na BD manualmente). Quando se conseguir configurar o envio para a BD verificar!</p>
 
-        <p>A partir da tabela principal deve haver um botão que redirecione para esta blade para ver os álbuns da banda
-            clicada. Ao clicar aqui abrirá uma nova tabela com os álbuns da banda, com os campos: (nome do álbum, imagem,
+        <p>Aqui se abrirá uma nova tabela com os álbuns da banda selecionada! Com os campos: (nome do álbum, imagem,
             data de lançamento.)</p>
 
             <br>

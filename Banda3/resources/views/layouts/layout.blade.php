@@ -56,8 +56,7 @@
             <ul>
 
                 <li><a href="/home">Home</a></li>
-                <li><a href="/banda">Add Bandas</a></li>
-                <li><a href="/album">Add Álbuns</a></li>
+                <li><a href="/banda">Adicionar Bandas</a></li>
                 <li><a href="/registar">Registar</a></li>
                 @if (Route::has('login'))
                     @auth

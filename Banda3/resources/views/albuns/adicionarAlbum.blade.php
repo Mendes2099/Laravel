@@ -1,13 +1,14 @@
 @extends('layouts.layout')
 
 @section('content')
-    <h1>Adicionar novo Album a: (Placeholder) 💽</h1>
-
+    <h1>Adicionar novo Album a (Placeholder) 💽</h1>
     <br>
+    <div>
+        <h4>Adiciona um novo Album da banda 💽</h4>
 
     <h2 style="font-weight: bold; color: red;"> BLADE INCOMPLETA! necessário configurar: ( Rotas do Album / AlbumController / Album Model)</h2>
 
-    <p>Aqui pode adicionar novos albuns que serão mostrados na blade /album (Terá que passar ).</p>
+    <p>Aqui pode adicionar novos albuns que serão mostrados na blade (/bandas/id/albums) (Terá que passar os dados corretamente).</p>
 
     <form action="{{ route('post-adicionar-Album') }}" method="POST" enctype="multipart/form-data">
         @csrf

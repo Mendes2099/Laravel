@@ -18,31 +18,27 @@ use Illuminate\Support\Facades\Route;
 
 // Rota para a página inicial (welcome)
 Route::get('/', [BandaController::class, 'index'])->name('bandas');
+
 // Rota para a página do usuário (home)
 Route::get('/home', [BandaController::class, 'index'])->name('bandas');
-//Rota para a blade fallback
+
+// Rota fallback para lidar com rotas não encontradas
 Route::fallback([UserController::class, 'fallback'])->name('fallback');
-
-//*------------------------------------------------------------------*/
-
 
 // Rotas relacionadas com Bandas
 Route::post('/banda', [BandaController::class, 'postAdicionarBanda'])->name('post-adicionar-banda');
 Route::get('/banda', [BandaController::class, 'adicionarBanda'])->name('adicionar-banda');
 
+// Rotas relacionadas com usuários
+Route::post('/create_user', [UserController::class, 'createUser'])->name('create_user');
+Route::get('/registar', [UserController::class, 'addUser'])->name('add_user');
 
-//!------------------------------Erros------------------------------------*/
-
-// Rotas relacionadas com users
-Route::post('/create_user',   [UserController::class, 'createUser'])->name('create_user');
-Route::get('/registar',   [UserController::class, 'addUser'])->name('add_user');
-
-//Rota que aceita um parâmetro id na URL e direciona a solicitação para o método index do controlador AlbumController.
+// Rota para exibir os álbuns de uma banda específica
 Route::get('/bandas/{id}/albums', [AlbumController::class, 'index'])->name('albuns.album');
 
 // Rotas relacionadas com Albuns
 Route::post('/album', [AlbumController::class, 'postAdicionarAlbum'])->name('post-adicionar-Album');
 Route::get('/album', [AlbumController::class, 'adicionarAlbum'])->name('adicionar-Album');
 
-//! (A defenir) Rota para a blade que mostra os albuns de uma banda (Acedida por botão na /home "Ver Álbuns")
+// Rota para a blade que permite editar um álbum
 Route::get('/editarAlbum', [AlbumController::class, 'editarAlbum'])->name('editar-album');
