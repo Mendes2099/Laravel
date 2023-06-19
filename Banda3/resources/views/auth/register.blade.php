@@ -27,7 +27,7 @@
         <form method="POST" action="{{ route('create_user') }}">
             @csrf
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <label for="exampleInputEmail1" class="form-label">Email</label>
                 <input type="email" class="form-control" name="email" value="" id="exampleInputEmail1"
                     aria-describedby="emailHelp">
 
