@@ -1,14 +1,9 @@
-@php
-    use App\Models\User;
-@endphp
-
 @extends('layouts.layout')
-@section('content')
-@auth
-@if(Auth::user()->user_type == User::admin)
-    <h1>Adicionar nova Banda</h1>
 
-    <form action="{{ route('post-adicionar-banda') }}" method="POST" enctype="multipart/form-data">
+@section('content')
+    <p>Aqui você pode editar os detalhes da banda.</p>
+
+    <form action="{{ route('atualizarBanda') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
 
@@ -17,7 +12,7 @@
             @endif
 
             <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome" class="form-control">
+            <input type="text" name="nome" id="nome" class="form-control" value="{{ $banda->nome }}">
             @error('nome')
                 <div class="error">{{ $message }}</div>
             @enderror
@@ -29,15 +24,10 @@
             @error('foto')
                 <div class="error">{{ $message }}</div>
             @enderror
+            <input type="hidden" name="id" value="{{ $banda->id}}">
         </div>
-<br>
-        <button type="submit" class="btn btn-primary">Adicionar</button>
+        <br>
+        <button type="submit" class="btn btn-primary">Atualizar</button>
         <br>
     </form>
-    @else
-    <h3>Não tem acesso a essa página</h3>
-    @endif
-    @endauth
-    @endsection
-
-
+@endsection

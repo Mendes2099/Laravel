@@ -1,16 +1,10 @@
 @extends('layouts.layout')
 
 @section('content')
-    <h1> Ver Albuns de (placeholder)</h1>
+    <h1> Ver Albuns 💽</h1>
     <br>
     <div>
-        <h4>Todos os Albuns da banda 💽</h4>
-
-        <p style="font-weight: bold; color: red;"> Blade parece funcionar corretamente corretamente (Testei inserindo na BD manualmente). Quando se conseguir configurar o envio para a BD verificar!</p>
-
-        <p>Aqui se abrirá uma nova tabela com os álbuns da banda selecionada! Com os campos: (nome do álbum, imagem,
-            data de lançamento.)</p>
-
+        <h4>Todos os álbuns de {{ $banda->nome }}.</h4>
             <br>
             <table class="table">
                 <thead>

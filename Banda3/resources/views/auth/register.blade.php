@@ -14,16 +14,6 @@
 
           <h1>Registar novo User</h1>
         <br>
-          <h4> Quando é adicionado um user é necessário alterar o usertype na base de dados</h4>
-          <h4>Tem que existir os 3 tipos de users:</h4>
-          <h5>-User delogados / (Que ainda não registou um email e password (Apenas pode ver conteudo))</h5>
-          <h5>-User logados com o Usertype (regular) na BD / (Users com registo na BD + privilegios (edita bandas e álbuns))</h5>
-          <h5>-User logados com o Usertype (admin) na BD / (Users com registo na BD + privilegios (insere / apaga / edita bandas e álbuns))</h5>
-          <br>
-          <h5 style="font-weight: bold; color: red;">Comforme o usertype as blades e as suas funções devem ser restritas</h5>
-          <h5> Falta: Criar a página de Dashboard no menu acedida apenas por utilizadores autenticados (protegida por Middleware) que diga: ‘Olá, nome do utilizador’</h5>
-          <br>
-
         <form method="POST" action="{{ route('create_user') }}">
             @csrf
             <div class="mb-3">
@@ -57,7 +47,8 @@
             @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Registar</button>
         </form>
     </div>
 @endsection
+

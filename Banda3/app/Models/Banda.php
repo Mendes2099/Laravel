@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Banda extends Model
 {
-    protected $fillable = ['nome', 'foto', 'numero_albuns'];
+    protected $fillable = ['nome', 'foto'];
 }

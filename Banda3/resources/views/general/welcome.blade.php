@@ -9,7 +9,7 @@
     </head>
 
     <body>
-        <h1>Bem-vindo à página inicial do Bandas do Johnny!</h1>
+        <h1>Bem-vindo à página inicial do Bandas do Johnny! 😎</h1>
         <!-- Conteúdo da página inicial -->
     </body>
 

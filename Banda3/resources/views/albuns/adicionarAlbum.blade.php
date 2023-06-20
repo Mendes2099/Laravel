@@ -1,17 +1,24 @@
+@php
+    use App\Models\User;
+@endphp
 @extends('layouts.layout')
-
 @section('content')
-    <h1>Adicionar novo Album a (Placeholder) 💽</h1>
+@if(Auth::user()->user_type == User::admin)
+
+    <h1>Adicionar novo Album 💽</h1>
     <br>
     <div>
-        <h4>Adiciona um novo Album da banda 💽</h4>
-
-    <h2 style="font-weight: bold; color: red;"> BLADE INCOMPLETA! necessário configurar: ( Rotas do Album / AlbumController / Album Model)</h2>
-
-    <p>Aqui pode adicionar novos albuns que serão mostrados na blade (/bandas/id/albums) (Terá que passar os dados corretamente).</p>
 
     <form action="{{ route('post-adicionar-Album') }}" method="POST" enctype="multipart/form-data">
         @csrf
+        <select  class="custom-select" name="banda_id">
+            <option value="" selected>Todas as bandas</option>
+            @foreach ($todasbandas as $item)
+            <option @if ($item->id == request()->query('banda_id')) selected @endif value="{{ $item->id }}">
+            {{ $item->nome }} </option>
+            @endforeach
+        </select>
+
         <div class="form-group">
             @if (session('message'))
                 <div class="alert alert-success">{{ session('message') }}</div>
@@ -33,9 +40,9 @@
         </div>
         <br>
         <div class="form-group">
-            <label for="foto">Foto</label>
-            <input type="file" name="foto" id="foto" class="form-control-file">
-            @error('foto')
+            <label>Foto</label>
+            <input type="file" name="imagem" id="foto" class="form-control-file">
+            @error('imagem')
                 <div class="error">{{ $message }}</div>
             @enderror
         </div>
@@ -43,4 +50,8 @@
         <button type="submit" class="btn btn-primary">Adicionar 💽</button>
         <br>
     </form>
+
+@else
+<h3>Não tem acesso a essa página</h3>
+@endif
 @endsection

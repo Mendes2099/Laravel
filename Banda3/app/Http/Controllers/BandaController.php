@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Banda;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class BandaController extends Controller
@@ -15,43 +16,29 @@ class BandaController extends Controller
         return view('general.home', compact('bandas')); // Pass the $bandas variable to the view
     }
 
+    public function bandas()
+    {
+        $bandas = DB::table('bandas') // Retrieve all bandas from the database
+        ->get();
+
+        foreach ($bandas as $item){
+            $item->numero_albuns = $this->numeroAlbuns($item->id);
+        }
+
+        return view('bandas.bandas', compact('bandas')); // Pass the $bandas variable to the view
+    }
+
+    public function numeroAlbuns($id){
+        $albuns = DB::table('albuns')
+        ->where('banda_id', $id)
+        ->select('albuns.*')
+        ->get();
+
+        return count($albuns);
+    }
+
     //*---------------------------------------
 
     // Método responsável por exibir o formulário de adicionar banda
-    public function adicionarBanda()
-    {
-        return view('bandas.adicionarBanda');
-    }
 
-    // Método responsável por processar o formulário de adicionar banda
-    public function postAdicionarBanda(Request $request)
-    {
-
-        // Validação dos campos do formulário
-        $request->validate([
-            'nome' => 'required|string',
-            'foto' => 'nullable|image',
-            'numero_albuns' => 'required|integer',
-        ]);
-
-
-        // Criar uma nova instância de Banda com os dados do formulário
-        $banda = new Banda();
-
-        $banda->nome = $request->input('nome');
-        $banda->numero_albuns = $request->input('numero_albuns');
-
-        // Verificar se foi enviada uma foto e salvá-la
-        if ($request->hasFile('foto')) {
-            $foto = $request->file('foto');
-            $path = $foto->store('bandas', 'public');
-            $banda->foto = $path;
-        }
-
-        // Salvar a banda no banco de dados
-        $banda->save();
-
-        // Redirecionar para a página de bandas com uma mensagem de sucesso
-        return redirect()->route('adicionar-banda')->with('message', 'Banda adicionada com sucesso! 🚀');
-    }
 }

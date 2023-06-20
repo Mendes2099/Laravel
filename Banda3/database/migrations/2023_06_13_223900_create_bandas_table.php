@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('foto')->nullable();
-            $table->integer('numero_albuns')->default(0);
             $table->timestamps();
         });
     }

@@ -50,6 +50,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-         return redirect('/registar')->with('message', 'User adicionado com sucesso! 🧍');
+         return redirect('/registar')->with('message', 'User adicionado com sucesso! 🧑');
      }
 }
+

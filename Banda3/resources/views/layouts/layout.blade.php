@@ -54,19 +54,22 @@
     <header>
         <nav>
             <ul>
+                <li><a href="/">Home</a></li>
+                @auth
 
-                <li><a href="/home">Home</a></li>
-                <li><a href="/banda">Adicionar Bandas</a></li>
-                <li><a href="/registar">Registar</a></li>
+                    <li><a href="/backoffice">Backoffice</a></li>
+                @endauth
+                <li><a href="/bandas">Bandas</a></li>
                 @if (Route::has('login'))
                     @auth
-                        <li>
+                        <li class="ml-auto">
                             <form action="{{ route('logout') }}" method="POST" class="d-inline">
                                 @csrf
                                 <button type="submit" class="btn btn-link text-white">Logout</button>
                             </form>
                         </li>
                     @else
+                        <li><a href="/registar">Registar</a></li>
                         <li><a href="{{ route('login') }}">Login</a></li>
                     @endauth
                 @endif
