@@ -3,7 +3,7 @@
 @section('content')
     <div>
         <br>
-        <h4>Todas as bandas</h4>
+        <h1>Todas as bandas🎸</h1>
 
         <table class="table">
             <thead>

@@ -5,12 +5,7 @@
 @extends('layouts.layout')
 
 @section('content')
-@if (Auth::user()->user_type == User::admin)
-    <div class="text-center">
-        <a href="{{ route('post-adicionar-banda') }}" class="btn btn-primary">Adicionar Banda</a>
-        <a href="{{ route('post-adicionar-Album') }}" class="btn btn-primary">Adicionar Álbum</a>
-    </div>
-@endif
+
 
 <div class="mt-4">
     <h1>Todas as bandas🎸</h1>
@@ -39,6 +34,8 @@
         </tbody>
     </table>
 
+    <br>
+
     <h1>Todos os álbuns💽</h1>
 
     <table class="table">
@@ -66,5 +63,12 @@
             @endforeach
         </tbody>
     </table>
+    <br>
+    @if (Auth::user()->user_type == User::admin)
+    <div class="text-center">
+        <a href="{{ route('post-adicionar-banda') }}" class="btn btn-primary">Nova Banda🎸</a>
+        <a href="{{ route('post-adicionar-Album') }}" class="btn btn-primary">Novo Álbum💽</a>
+    </div>
+@endif
 </div>
 @endsection

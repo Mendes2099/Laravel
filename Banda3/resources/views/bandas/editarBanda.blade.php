@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <p>Aqui você pode editar os detalhes da banda.</p>
+<h1>Editar a banda🎸</h1>
 
     <form action="{{ route('atualizarBanda') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -27,7 +27,7 @@
             <input type="hidden" name="id" value="{{ $banda->id}}">
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <button type="submit" class="btn btn-primary">Atualizar🎸</button>
         <br>
     </form>
 @endsection

@@ -56,7 +56,6 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 @auth
-
                     <li><a href="/backoffice">Backoffice</a></li>
                 @endauth
                 <li><a href="/bandas">Bandas</a></li>

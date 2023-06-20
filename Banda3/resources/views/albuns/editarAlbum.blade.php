@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <p>Aqui você pode editar os detalhes do Album. 💽</p>
+<h1> Editar o Album 💽</h1>
 
     <form action="{{ route('atualizarAlbum') }}" method="POST" enctype="multipart/form-data">
         @csrf
